@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Spending Summary</h2>
+<div class="summary-cards">
+    <div class="card">Total: ₹{{ total }}</div>
+    <div class="card blue">This Week: ₹{{ weekly_total }}</div>
+    <div class="card green">This Month: ₹{{ monthly_total }}</div>
+    <div class="card orange">This Year: ₹{{ yearly_total }}</div>
+</div>
+
+<h2>Expenses by Category</h2>
+<canvas id="categoryChart" width="400" height="200"></canvas>
+
+<h2>All Expenses</h2>
+<ul class="expenses">
+    {% for exp in expenses %}
+    <li>
+        <strong>{{ exp['date'] }}</strong> – {{ exp['description'] }} ₹{{ exp['price'] }} [{{ exp['category'] }}]
+        <a href="{{ url_for('delete', id=exp['id']) }}" class="delete">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ labels|tojson }},
+            datasets: [{
+                label: 'Total Spent (₹)',
+                data: {{ data|tojson }},
+                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+            }]
+        }
+    });
+</script>
+{% endblock %}

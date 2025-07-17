@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: white;
+    padding: 1em 2em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+}
+
+.expenses {
+    list-style: none;
+    padding: 0;
+}
+
+.expenses li {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.delete {
+    float: right;
+    color: red;
+    text-decoration: none;
+}
+
+/* ---- Form Styling Below ---- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.form-container {
+    background-color: #f1f1f1;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+form a, .form-container a {
+    margin-top: 15px;
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+form a:hover, .form-container a:hover {
+    text-decoration: underline;
+}
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card.blue {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.card.green {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.card.orange {
+    background-color: #fff3cd;
+    color: #856404;
+}

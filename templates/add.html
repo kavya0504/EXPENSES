@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Add New Expense</h2>
+
+<div class="form-container">
+    <form method="POST">
+        <label>Date</label>
+        <input type="date" name="date" required>
+
+        <label>Description</label>
+        <input type="text" name="description" placeholder="Description" required>
+
+        <label>Category</label>
+        <input type="text" name="category" placeholder="Category" required>
+
+        <label>Amount (₹)</label>
+        <input type="number" step="0.01" name="price" required>
+
+        <button type="submit">Add Expense</button>
+    </form>
+    <a href="{{ url_for('index') }}">← Back to Home</a>
+</div>
+{% endblock %}
